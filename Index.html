@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Hami Koué — Artiste peintre</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #050706;
+    }
+
+    .hero {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+
+      background-image: url("Accueil.png");
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.08);
+    }
+
+    .enter {
+      position: absolute;
+      left: 50%;
+      bottom: 7%;
+      transform: translateX(-50%);
+
+      color: #d9a84e;
+      text-decoration: none;
+
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(0.75rem, 1.2vw, 1rem);
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+
+      padding: 15px 25px;
+
+      transition: all 0.4s ease;
+    }
+
+    .enter::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 1px;
+      background: #d9a84e;
+      margin: 8px auto 0;
+      transition: width 0.4s ease;
+    }
+
+    .enter:hover {
+      color: #f0c878;
+      transform: translateX(-50%) translateY(-3px);
+    }
+
+    .enter:hover::after {
+      width: 100%;
+    }
+
+    @media (max-width: 700px) {
+
+      .hero {
+        background-position: 62% center;
+      }
+
+      .enter {
+        bottom: 6%;
+        font-size: 0.7rem;
+        letter-spacing: 0.2em;
+        white-space: nowrap;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="hero">
+    <div class="overlay"></div>
+
+    <a href="#" class="enter">
+      Touchez l'écran pour entrer
+    </a>
+  </main>
+
+</body>
+</html>
